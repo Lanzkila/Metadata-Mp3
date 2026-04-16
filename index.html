@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kirin Album Studio</title>
+    <title>Kirin Album Studio | V2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/browser-id3-writer@4.4.0/dist/browser-id3-writer.min.js"></script>
 </head>
@@ -11,41 +12,48 @@
 
 <div class="container">
     <header>
-        <h1>Kirin Album Studio</h1>
-        <p class="subtitle">Aesthetic Media Archiving</p>
+        <h1>KIRIN ALBUM STUDIO</h1>
+        <div class="divider"></div>
+        <p class="subtitle">PREMIUM MEDIA ARCHIVING SYSTEM</p>
     </header>
 
     <main>
         <div class="upload-section">
             <div id="drop-zone" onclick="document.getElementById('imageInput').click()">
-                <span id="label">Tap to Upload Cover Art</span>
+                <div class="overlay-text" id="label">TAP TO UPLOAD ART</div>
                 <img id="cover-preview" src="" alt="Preview">
             </div>
             <input type="file" id="imageInput" accept="image/*" hidden>
         </div>
 
         <div class="info-section">
-    <input type="text" id="albumTitle" placeholder="ALBUM NAME">
-    <input type="text" id="songArtist" placeholder="ARTIST / KIRIN">
-    
-    <label for="audioInput" class="custom-file-upload">
-        SELECT AUDIO TRACKS
-    </label>
-    <input type="file" id="audioInput" accept="audio/*" multiple>
-    
-    <p class="hint">*Files will be processed in the order selected</p>
+            <div class="input-group">
+                <label>ALBUM TITLE</label>
+                <input type="text" id="albumTitle" placeholder="REQUIRED">
+            </div>
+            <div class="input-group">
+                <label>ARTIST NAME</label>
+                <input type="text" id="songArtist" placeholder="KIRIN / LANZMAGICK">
+            </div>
+            
+            <label for="audioInput" class="custom-file-upload">
+                SELECT AUDIO TRACKS
+            </label>
+            <input type="file" id="audioInput" accept="audio/*" multiple>
+            
+            <p class="hint">FILES PROCESSED BY SELECTION ORDER</p>
         </div>
 
         <div id="tracklist-container" class="tracklist">
-            <h3>Tracklist Preview</h3>
+            <h3>TRACKLIST PREVIEW</h3>
             <ul id="file-list"></ul>
         </div>
 
-        <button id="processBtn" onclick="processAlbum()">Generate Full Album</button>
+        <button id="processBtn" onclick="processAlbum()">GENERATE FULL ALBUM</button>
     </main>
 
     <footer>
-        <p>Created by Kirin &bull; LanzMagick</p>
+        <p>CORE ENGINE BY KIRIN &bull; LANZMAGICK</p>
     </footer>
 </div>
 
