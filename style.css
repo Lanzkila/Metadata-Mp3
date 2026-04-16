@@ -1,181 +1,207 @@
 :root {
-    --bg: #050505;
-    --card: #0c0c0c;
-    --text: #a0a0a0;
-    --accent: #222;
+    --bg: #020205; /* Blue-Black background */
+    --card: #08080c;
+    --text: #8a8a9a;
+    --accent: #1a1a2e; /* Deep blue border */
     --highlight: #ffffff;
+    --neon-blue: #0044ff;
 }
 
 body {
     background-color: var(--bg);
     color: var(--text);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Space Mono', monospace; /* Font lebih jelas */
     margin: 0;
     display: flex;
     justify-content: center;
-    padding: 40px 20px;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .container {
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     background: var(--card);
-    padding: 40px 30px;
+    padding: 50px 35px;
     border: 1px solid var(--accent);
-    box-shadow: 0 20px 80px rgba(0,0,0,0.9);
+    box-shadow: 0 0 50px rgba(0, 68, 255, 0.1); /* Glow biru halus */
+    border-radius: 4px;
 }
 
 header h1 {
-    font-size: 1.1rem;
-    letter-spacing: 6px;
-    text-transform: uppercase;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 4px;
     color: var(--highlight);
     text-align: center;
-    margin: 0;
+}
+
+.divider {
+    width: 40px;
+    height: 2px;
+    background: var(--neon-blue);
+    margin: 15px auto;
 }
 
 .subtitle {
-    font-size: 0.6rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    opacity: 0.4;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    opacity: 0.6;
     text-align: center;
-    margin-top: 10px;
     margin-bottom: 40px;
 }
 
-/* Upload Box - Aesthetic Square */
+/* Square Art Box */
 #drop-zone {
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
     background: #000;
-    border: 1px solid var(--accent);
-    margin: 0 auto 30px;
+    border: 2px dashed var(--accent);
+    margin: 0 auto 35px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
+    transition: 0.3s;
 }
 
-#drop-zone:hover { border-color: #555; }
+#drop-zone:hover {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0, 68, 255, 0.2);
+}
 
-#label {
-    font-size: 0.65rem;
+.overlay-text {
+    font-size: 0.75rem;
+    font-weight: bold;
     letter-spacing: 1px;
-    color: #444;
-    text-align: center;
-    padding: 20px;
+    color: #333;
 }
 
 #cover-preview {
-    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(1) contrast(1.1);
     display: none;
+    filter: contrast(1.1);
 }
 
-/* Form Styling */
+/* Input Fields */
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    color: var(--neon-blue);
+    font-weight: bold;
+}
+
 input[type="text"] {
     width: 100%;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid var(--accent);
+    background: #000;
+    border: 1px solid var(--accent);
     color: #fff;
-    padding: 12px 5px;
-    margin-bottom: 20px;
+    padding: 15px;
+    box-sizing: border-box;
     font-family: inherit;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
+    font-size: 0.9rem;
+    transition: 0.3s;
 }
 
 input[type="text"]:focus {
     outline: none;
-    border-bottom-color: var(--highlight);
+    border-color: var(--neon-blue);
+    background: #050510;
 }
 
-/* CHOOSE BUTTON - INI YANG TAK BURIK */
 .custom-file-upload {
     display: block;
-    width: 100%;
-    padding: 15px;
-    background: transparent;
-    border: 1px solid var(--accent);
-    color: #666;
+    padding: 18px;
+    background: #000;
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
     text-align: center;
     cursor: pointer;
-    font-size: 0.7rem;
-    letter-spacing: 3px;
-    margin-top: 10px;
-    transition: 0.4s;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: 0.3s;
 }
 
 .custom-file-upload:hover {
-    border-color: var(--highlight);
-    color: var(--highlight);
+    background: var(--neon-blue);
+    color: #fff;
 }
-
-input[type="file"] { display: none; }
 
 .hint {
-    font-size: 0.55rem;
-    color: #333;
+    font-size: 0.6rem;
+    color: #444;
     text-align: center;
-    margin-top: 10px;
-    letter-spacing: 1px;
+    margin-top: 15px;
 }
 
-/* Tracklist Preview */
+/* Tracklist */
 .tracklist {
-    margin-top: 30px;
-    border-top: 1px solid var(--accent);
-    padding-top: 20px;
-    text-align: left;
+    margin-top: 40px;
+    background: #050508;
+    padding: 20px;
+    border-left: 3px solid var(--neon-blue);
 }
 
 .tracklist h3 {
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    color: #444;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    color: var(--highlight);
 }
 
 ul {
-    padding-left: 15px;
-    font-size: 0.75rem;
-    color: #777;
-    list-style-type: decimal-leading-zero;
+    padding-left: 20px;
+    font-size: 0.85rem;
 }
 
-li { margin-bottom: 8px; border-bottom: 1px dark #111; }
+li {
+    margin-bottom: 12px;
+    color: #bbb;
+    border-bottom: 1px solid #111;
+    padding-bottom: 5px;
+}
 
-/* GENERATE BUTTON */
+/* Process Button */
 #processBtn {
     width: 100%;
-    padding: 18px;
+    padding: 22px;
     background: var(--highlight);
     color: #000;
     border: none;
+    font-family: 'Syncopate', sans-serif;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    margin-top: 30px;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-top: 40px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-#processBtn:hover {
-    background: #888;
+#processBtn:hover:not(:disabled) {
+    background: var(--neon-blue);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+#processBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 footer {
     text-align: center;
-    font-size: 0.5rem;
-    letter-spacing: 3px;
-    margin-top: 40px;
-    opacity: 0.2;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    margin-top: 50px;
+    opacity: 0.3;
 }
-
