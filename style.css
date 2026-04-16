@@ -7,6 +7,10 @@
     --neon-blue: #0044ff;
 }
 
+input[type="file"] {
+    display: none !important;
+}
+
 body {
     background-color: var(--bg);
     color: var(--text);
@@ -27,6 +31,7 @@ body {
     border: 1px solid var(--accent);
     box-shadow: 0 0 50px rgba(0, 68, 255, 0.1); /* Glow biru halus */
     border-radius: 4px;
+    box-sizing: border-box;
 }
 
 header h1 {
@@ -121,6 +126,7 @@ input[type="text"]:focus {
 
 .custom-file-upload {
     display: block;
+    width: 100%;
     padding: 18px;
     background: #000;
     border: 1px solid var(--neon-blue);
@@ -131,6 +137,7 @@ input[type="text"]:focus {
     font-weight: bold;
     letter-spacing: 2px;
     transition: 0.3s;
+    box-sizing: border-box;
 }
 
 .custom-file-upload:hover {
